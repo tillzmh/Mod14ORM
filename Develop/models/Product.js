@@ -16,7 +16,7 @@ Product.init(
       primaryKey: true,
       autoIncrement: true
   },
-  produceName: { 
+  product_name: { 
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -24,9 +24,8 @@ Product.init(
   price:{
     type: DataTypes.DECIMAL,
     allowNull: false,
-    defaultValue: 10,
     Validate: {
-      isNumeric: true,
+      isDecimal: true,
     }
   },
 
@@ -41,10 +40,12 @@ Product.init(
   category_id:{
     type: DataTypes.INTEGER,
     references: {
-      module: 'category',
-      key:"id",
+      model:'category',
+      key:'id',
     }
-  },
+  }
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
