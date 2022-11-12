@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="d-flex flex-column justify-content-center w-100 h-100"></div>
+  <div class="wrapper">
+      <header class="hero">
+        <div class="hero-image">
+          <div>
+            <nav class"nav" style="padding: 50px">
+                    <a class="link" href="/">Home</a>
+                    {{#if loggedIn}}
+                    <a class="link" href="/" id="logout">Logout</a>
+                    {{else}}
+                    <a class="link" href="/auth/login">Login</a>
+                    {{/if}}
+                </nav>          
+          </div>
+
+        
+      </header>
+
+    <main>
+       <div>
+        {{{ body }}}
+
+       </div> 
+   
+    </main>
+  </div>
+      {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+
+</body>
+
+</html>
